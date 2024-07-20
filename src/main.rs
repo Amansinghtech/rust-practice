@@ -301,20 +301,79 @@ fn immutable_closure() {
     // println!("length of word = {}", word.len());
 }
 
-fn main() {
-    // hello_world();
-    // print_variables();
-    // rust_variables();
-    // type_casting();
-    // arithmetic();
-    // conditions();
-    // loops();
-    // pattern_matching();
-    // rust_arrays();
-    // mutable_slice_array();
-    // rust_tuples();
-    // rust_structures();
-    // rust_closure();
-    // mutable_closure();
-    immutable_closure();
+fn rust_vectors() {
+// a vector is a dynamic data structure that store data in heap. It can store multiple values of same data type
+    let mut numbers = vec![1, 2, 3];
+    println!("Numbers: {:?}", numbers);
+
+    // capacity of the vector
+    let capacity = numbers.capacity();
+    println!("Capacity: {capacity}");
+
+    // add an element to the vector
+    numbers.push(4);
+    numbers.push(5);
+    numbers.push(6);
+    numbers.push(7);
+    println!("Numbers: {:?}", numbers);
+
+    // remove an element from the vector
+    numbers.pop();
+    println!("Numbers: {:?}", numbers);
+
+    // get the length of the vector
+    let length = numbers.len();
+    println!("Length: {length}");
+
+    // get the capacity of the vector
+    let capacity = numbers.capacity();
+    println!("Capacity: {capacity}");
+
+    // check if the vector is empty
+    let is_empty = numbers.is_empty();
+    println!("Is Empty: {is_empty}");
+
+    // get the first element of the vector
+    let first = numbers[0];
+    println!("First: {first}");
+
+    // get the last element of the vector
+    let last = numbers[numbers.len() - 1];
+    println!("Last: {last}");
+
+    // get the element at index 2
+    let second = numbers.get(2);
+    println!("Second: {second:?}");
+
+    // loop through the vector
+    for number in numbers.iter() {
+        println!("Number: {number}");
+    }
+
+    // loop through the vector and mutate the values
+    for number in numbers.iter_mut() {
+        *number *= 2;
+    }
+    println!("Numbers: {:?}", numbers);
+
 }
+
+fn main() {
+    hello_world();
+    print_variables();
+    rust_variables();
+    type_casting();
+    arithmetic();
+    conditions();
+    loops();
+    pattern_matching();
+    rust_arrays();
+    mutable_slice_array();
+    rust_tuples();
+    rust_structures();
+    rust_closure();
+    mutable_closure();
+    immutable_closure();
+    rust_vectors();
+}
+
